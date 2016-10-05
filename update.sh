@@ -6,7 +6,7 @@ then
     cd ./wio_link_git_clone/
 else
     echo "Now clone the repo..."
-    git clone https://github.com/Seeed-Studio/Wio_Link.git wio_link_git_clone
+    git clone https://github.com/nathanclevenger/Wio_Link.git wio_link_git_clone
     cd ./wio_link_git_clone/
     git submodule init
 fi
