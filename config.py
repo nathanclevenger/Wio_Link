@@ -9,7 +9,7 @@ vhost_url_base = ''
 ###############################
 # Set ALWAYS_BUILD_FROM_SRC to True to enable the building always from source code
 # It's useful when under dev stage, to figure out the newly developed code correct or not
-ALWAYS_BUILD_FROM_SRC = False
+ALWAYS_BUILD_FROM_SRC = True
 
 
 
@@ -28,4 +28,3 @@ auto_reload_for_debug = False
 ###############################
 # The secrect for external user login
 ext_user_secret = 'secret'
-

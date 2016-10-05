@@ -1,0 +1,17 @@
+{
+  "pidfilepath": "~/.gitautodeploy.pid",
+  "logfilepath": "~/gitautodeploy.log",
+  "host": "0.0.0.0",
+  "port": 8181,
+  "global_deploy": [
+    "echo Deploy started!",
+    "echo Deploy completed!"
+  ],
+  "log-level": "INFO",
+  "repositories": [
+    {
+      "url": "https://github.com/nathanclevenger/Grove_Drivers_for_Wio",
+      "path": "../grove_drivers"
+    }
+  ]
+}

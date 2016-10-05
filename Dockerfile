@@ -11,13 +11,16 @@ ENV PATH /opt/xtensa-lx106-elf/bin:$PATH
 RUN apt-get update && \
     apt-get install -qqy --force-yes python-dev supervisor vim
 
+RUN apt-get install software-properties-common
+RUN add-apt-repository ppa:olipo186/git-auto-deploy
+RUN apt-get update
+RUN apt-get install git-auto-deploy
+
 RUN pip install tornado
 RUN pip install PyJWT
 RUN pip install pycrypto
 RUN pip install PyYaml
 RUN pip install tornado-cors
-RUN pip install setuptools
-RUN pip install lockfile
 
 #add the files into image
 RUN mkdir -p /root/esp8266_iot_node
@@ -29,6 +32,7 @@ RUN chmod a+x ../update.sh
 
 #config supervisor
 RUN mv ./esp8266_server.conf /etc/supervisor/conf.d/esp8266_server.conf
+RUN mv ./git-auto-deploy.conf.json /etc/git-auto-deploy.conf.json
 RUN mkdir -p /root/supervisor_log
 
 #expose ports
