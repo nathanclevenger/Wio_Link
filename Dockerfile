@@ -16,6 +16,8 @@ RUN pip install PyJWT
 RUN pip install pycrypto
 RUN pip install PyYaml
 RUN pip install tornado-cors
+RUN pip install setuptools
+RUN pip install lockfile
 
 #add the files into image
 RUN mkdir -p /root/esp8266_iot_node
@@ -30,6 +32,6 @@ RUN mv ./esp8266_server.conf /etc/supervisor/conf.d/esp8266_server.conf
 RUN mkdir -p /root/supervisor_log
 
 #expose ports
-EXPOSE 8000 8001 8080 8081
+EXPOSE 8000 8001 8080 8081 8181
 
 CMD /etc/init.d/supervisor start && /bin/bash
